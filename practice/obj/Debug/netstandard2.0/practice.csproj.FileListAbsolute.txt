@@ -1,0 +1,14 @@
+/Users/matsuiyuichiro/tsubasa/practice/practice/bin/Debug/netstandard2.0/practice.deps.json
+/Users/matsuiyuichiro/tsubasa/practice/practice/bin/Debug/netstandard2.0/practice.dll
+/Users/matsuiyuichiro/tsubasa/practice/practice/bin/Debug/netstandard2.0/ref/practice.dll
+/Users/matsuiyuichiro/tsubasa/practice/practice/bin/Debug/netstandard2.0/practice.pdb
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/practice.csprojAssemblyReference.cache
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/practice.AssemblyInfoInputs.cache
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/practice.AssemblyInfo.cs
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/practice.csproj.CoreCompileInputs.cache
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/practice.dll
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/ref/practice.dll
+/Users/matsuiyuichiro/tsubasa/practice/practice/obj/Debug/netstandard2.0/practice.pdb

@@ -1,7 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="practice.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="practice.MainPage">
+
+    <!--余白を入れる（iOSの場合のみ）-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">0,20,0,0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Label x:Name="labelHelloWorld"
+               Text="To Do List"
+               TextColor="DarkBlue"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+         
+        <!--9.2 Data Triggerを使ってentryに文字が入力されないと追加ボタンが押せないようにしている。 -->  
+        <Entry x:Name="entry"
+               Text=""/> 
+               
+
+        <Button Text="Add"
+                Clicked="ButtonAddItem_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="Navy"
+                TextColor="White">
+
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" 
+                      Binding="{Binding Text.Length,Source={x:Reference entry}}"
+                      Value="0">
+                    <Setter Property="IsEnabled"
+                            Value="false"/>
+
+                    </DataTrigger>
+
+            </Button.Triggers>
+        </Button>
+
+        <ListView x:Name="listView"
+                  VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+               <DataTemplate>
+                   <ViewCell >
+                       <Grid>
+                           <Grid.ColumnDefinitions>
+                               <ColumnDefinition Width="1*"/>
+                               <ColumnDefinition Width="3*"/>
+                               <ColumnDefinition Width="1*"/>
+                           </Grid.ColumnDefinitions>
+
+                           <Label Text="{Binding Name}"
+                                  VerticalTextAlignment="Center"
+                                  Grid.Column="1" />
+
+                           <CheckBox IsChecked="{Binding IsChecked}"
+                                     Color="DeepSkyBlue"
+                                   Grid.Column="0"/>
+                           <Button Text="×"
+                                   TextColor="White"
+                                   BackgroundColor="Navy"
+                                   Clicked="ButtonRemoveItem_Clicked"
+                                   Grid.Column="2"/>
+                        </Grid>
+                   </ViewCell>
+
+               </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </StackLayout>
 </ContentPage>
